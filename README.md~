@@ -1,0 +1,10 @@
+PDL
+===
+
+Personal Droid Library
+
+Como usar:
+1. Abra o arquivo Constantes.py e modifique a url do servidor
+2. Execute o arquivo servidor.py
+3. Modifique a url do servidor pra a url especificada no arquivo Constantes.py no arquivo Constantes.java
+4. Execute o cliente

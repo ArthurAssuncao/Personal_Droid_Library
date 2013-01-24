@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/item_livro_texto_livro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_marginRight="50dp"
+        android:text="livro"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/item_livro_texto_data_devolucao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/item_livro_texto_livro"
+        android:layout_alignBottom="@+id/item_livro_texto_livro"
+        android:layout_alignParentRight="true"
+        android:text="10/01/2013" 
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</RelativeLayout>

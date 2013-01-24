@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/aba_extrato"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/aba_extrato_rotulo_usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:text="@string/rotulo_usuario"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/aba_extrato_rotulo_matricula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/aba_extrato_rotulo_usuario"
+        android:layout_below="@+id/aba_extrato_rotulo_usuario"
+        android:layout_marginTop="16dp"
+        android:text="@string/rotulo_matricula"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/aba_extrato_rotulo_data_emissao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/aba_extrato_rotulo_matricula"
+        android:layout_below="@+id/aba_extrato_rotulo_matricula"
+        android:layout_marginTop="20dp"
+        android:text="@string/rotulo_data_emissao"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/aba_extrato_campo_data_emissao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/aba_extrato_rotulo_data_emissao"
+        android:layout_alignBottom="@+id/aba_extrato_rotulo_data_emissao"
+        android:layout_centerHorizontal="true"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/aba_extrato_campo_usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/aba_extrato_rotulo_matricula"
+        android:layout_alignLeft="@+id/aba_extrato_campo_data_emissao"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/aba_extrato_campo_matricula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/aba_extrato_rotulo_matricula"
+        android:layout_alignBottom="@+id/aba_extrato_rotulo_matricula"
+        android:layout_alignLeft="@+id/aba_extrato_campo_usuario"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/aba_extrato_campo_livros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/aba_extrato_rotulo_data_emissao"
+        android:layout_below="@+id/aba_extrato_rotulo_data_emissao"
+        android:layout_marginTop="16dp"
+        android:text="@string/rotulo_livros"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <ListView
+        android:id="@+id/aba_extrato_lista_livros"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/aba_extrato_botao_atualizar_extrato"
+        android:layout_alignLeft="@+id/aba_extrato_campo_livros"
+        android:layout_below="@+id/aba_extrato_campo_livros"
+        android:layout_marginRight="10dp" >
+
+    </ListView>
+
+    <Button
+        android:id="@+id/aba_extrato_botao_atualizar_extrato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/aba_extrato_lista_livros"
+        android:layout_alignParentBottom="true"
+        android:onClick="atualizarExtrato"
+        android:text="@string/botao_atualizar_extrato" />
+
+</RelativeLayout>
