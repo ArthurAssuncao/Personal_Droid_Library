@@ -10,3 +10,12 @@ Como usar:
 4. Execute o cliente.
 
 ##Screnshots
+
+### Resultado de uma busca
+![Busca Realiazada](https://raw.github.com/ArthurAssuncao/PDL/master/screenshots/busca_realizada.png)
+
+### Extrato
+![Extrato](https://raw.github.com/ArthurAssuncao/PDL/master/screenshots/extrato.png)
+
+### Busca carregando
+![Busca carregando](https://raw.github.com/ArthurAssuncao/PDL/master/screenshots/busca_carregando.png)
