@@ -5,8 +5,8 @@ public abstract class Constantes {
 	//public static String URL_SERVIDOR = "http://10.3.1.20:8888";
 	public static String URL_SERVIDOR = "http://192.168.2.25:8888";
 	public static final int TIMEOUT = 3000;
-	public static final int TEMPO_VERIFICAR_DATA_DEVOLUCAO = 60*6; //minutos
-	public static final int DIAS_VERIFICAR_LIVRO = 7;
+	public static final int TEMPO_VERIFICAR_DATA_DEVOLUCAO = 360; //minutos
+	public static final int DIAS_VERIFICAR_LIVRO = 3;
 
 	public static final String URL_BIBLIOTECA_IFET = "http://ifsmg.phlweb.com.br";
 	//public static final String URL_BIBLIOTECA_IFET_COMPLETA = "/cgi-bin/wxis.exe?IsisScript=phl82.xis&cipar=phl82.cip&lang=por";
