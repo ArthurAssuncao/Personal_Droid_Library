@@ -21,7 +21,6 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.arthurassuncao.pdl.IActivityMostraErro;
-import com.arthurassuncao.pdl.LoginActivity;
 import com.arthurassuncao.pdl.PDLActivity;
 import com.arthurassuncao.pdl.util.Constantes;
 

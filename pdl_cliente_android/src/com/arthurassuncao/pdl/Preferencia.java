@@ -12,7 +12,8 @@ public class Preferencia {
 
 	public Preferencia(Context contexto) {
 		//Restaura as preferencias gravadas
-		settings = contexto.getSharedPreferences(NOME_PREFERENCIAS, 0);
+		this.contexto = contexto;
+		settings = this.contexto.getSharedPreferences(NOME_PREFERENCIAS, 0);
 	}
 
 	@SuppressWarnings("unchecked")

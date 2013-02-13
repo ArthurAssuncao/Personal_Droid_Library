@@ -2,7 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/aba_extrato"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp" >
 
     <TextView
         android:id="@+id/aba_extrato_rotulo_usuario"
@@ -11,6 +13,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:text="@string/rotulo_usuario"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -88,8 +91,10 @@
         android:id="@+id/aba_extrato_botao_atualizar_extrato"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/aba_extrato_lista_livros"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:drawableLeft="@drawable/glyphicons_085_repeat"
+        android:drawablePadding="3dp"
         android:onClick="atualizarExtrato"
         android:text="@string/botao_atualizar_extrato" />
 

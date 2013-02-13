@@ -1,7 +1,7 @@
 #.decode('ISO-8859-1').encode('UTF-8') converte string
 
 #URL_SERVIDOR = '10.3.1.20'
-URL_SERVIDOR = '192.168.2.100'
+URL_SERVIDOR = '192.168.2.25'
 PORTA_SERVIDOR = 8888
 
 URL_BIBLIOTECA_IFET = 'http://ifsmg.phlweb.com.br'

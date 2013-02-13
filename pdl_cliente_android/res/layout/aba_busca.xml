@@ -12,25 +12,30 @@
         android:layout_alignParentLeft="true"
         android:ems="10"
         android:inputType="text"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp" />
 
     <Button
         android:id="@+id/aba_busca_botao_busca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/aba_busca_campo_busca"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_alignTop="@+id/aba_busca_campo_busca"
         android:layout_toRightOf="@+id/aba_busca_campo_busca"
-        android:text="@string/botao_busca"
-        android:layout_marginTop="10dp"
-        android:onClick="busca" />
+        android:drawableLeft="@drawable/glyphicons_027_search"
+        android:drawablePadding="3dp"
+        android:onClick="busca"
+        android:text="@string/botao_busca" />
 
     <ListView
         android:id="@+id/aba_busca_lista_resultados_livros"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/aba_busca_botao_proxima"
-        android:layout_alignParentLeft="true"
+        android:layout_alignLeft="@+id/aba_busca_campo_busca"
+        android:layout_alignRight="@+id/aba_busca_botao_busca"
         android:layout_below="@+id/aba_busca_campo_busca" >
 
     </ListView>
@@ -40,17 +45,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
+        android:layout_alignRight="@+id/aba_busca_botao_busca"
         android:layout_marginTop="10dp"
-        android:text="@string/botao_proxima"
-        android:onClick="proxima" />
+        android:drawablePadding="3dp"
+        android:drawableRight="@drawable/glyphicons_222_share"
+        android:onClick="proxima"
+        android:text="@string/botao_proxima" />
 
     <Button
         android:id="@+id/aba_busca_botao_anterior"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/aba_busca_lista_resultados_livros"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
+        android:drawableLeft="@drawable/glyphicons_221_unshare"
+        android:drawablePadding="3dp"
         android:onClick="anterior"
         android:text="@string/botao_anterior" />
 

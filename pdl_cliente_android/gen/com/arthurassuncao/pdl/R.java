@@ -14,10 +14,14 @@ public final class R {
         public static final int consulta_local=0x7f020000;
         public static final int disponivel=0x7f020001;
         public static final int extraviado=0x7f020002;
-        public static final int ic_action_search=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
-        public static final int indisponivel=0x7f020005;
-        public static final int reservado=0x7f020006;
+        public static final int glyphicons_027_search=0x7f020003;
+        public static final int glyphicons_085_repeat=0x7f020004;
+        public static final int glyphicons_221_unshare=0x7f020005;
+        public static final int glyphicons_222_share=0x7f020006;
+        public static final int ic_action_search=0x7f020007;
+        public static final int ic_launcher=0x7f020008;
+        public static final int indisponivel=0x7f020009;
+        public static final int reservado=0x7f02000a;
     }
     public static final class id {
         public static final int aba_busca=0x7f070000;
