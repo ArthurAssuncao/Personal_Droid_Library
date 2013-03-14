@@ -16,13 +16,13 @@ Arthur Nascimento Assunção
 ##Screenshots
 
 ### Resultado de uma busca
-![Busca Realiazada](https://raw.github.com/ArthurAssuncao/PDL/master/screenshots/busca_realizada.png)
+![Busca Realiazada](https://raw.github.com/ArthurAssuncao/Personal_Droid_Library/master/screenshots/busca_realizada.png)
 
 ### Extrato
-![Extrato](https://raw.github.com/ArthurAssuncao/PDL/master/screenshots/extrato.png)
+![Extrato](https://raw.github.com/ArthurAssuncao/Personal_Droid_Library/master/screenshots/extrato.png)
 
 ### Busca carregando
-![Busca carregando](https://raw.github.com/ArthurAssuncao/PDL/master/screenshots/busca_carregando.png)
+![Busca carregando](https://raw.github.com/ArthurAssuncao/Personal_Droid_Library/master/screenshots/busca_carregando.png)
 
 
 ###Credits
