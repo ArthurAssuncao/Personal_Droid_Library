@@ -111,11 +111,9 @@ public class PDLActivity extends Activity implements IActivityMostraErro{
 		try {
 			String textoBusca = campoBusca.getText().toString();
 			if(!textoBusca.trim().equals("")){
-
-				busca(textoBusca, 1, 0);
-
 				paginaAtual = 1;
 				paginaProxima = 0;
+				busca(textoBusca, paginaAtual, paginaProxima);
 			}
 			else{
 				Toast msg = Toast.makeText(this, getResources().getString(R.string.activity_pdl_msg_campo_busca_vazio), Toast.LENGTH_SHORT);
