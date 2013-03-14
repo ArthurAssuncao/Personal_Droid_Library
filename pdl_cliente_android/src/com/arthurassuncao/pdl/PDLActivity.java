@@ -185,8 +185,6 @@ public class PDLActivity extends Activity implements IActivityMostraErro{
 	}
 
 	public void anterior(View view){
-		Log.d("atual", String.valueOf(paginaAtual));
-		Log.d("proximo", String.valueOf(paginaProxima));
 		if(paginaAtual <= 1 && paginaProxima < 1){
 			Toast msg = Toast.makeText(this, getResources().getString(R.string.activity_pdl_msg_eh_primeira_pagina), Toast.LENGTH_SHORT);
 			msg.show();

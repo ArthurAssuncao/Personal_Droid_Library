@@ -6,7 +6,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="botao_ok">OK</string>
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_pdl">PDL</string>
+    <string name="title_activity_pdl">@string/app_name</string>
     <string name="botao_busca">Busca</string>
     <string name="botao_proxima">Proxima</string>
     <string name="botao_anterior">Anterior</string>
@@ -15,8 +15,8 @@
     <string name="rotulo_data_emissao">Data Emissão</string>
     <string name="botao_atualizar_extrato">Atualizar</string>
     <string name="rotulo_livros">Livros</string>
-    <string name="title_activity_alarme">PDL Verificacao</string>
-    <string name="title_activity_login">PDL</string>
+    <string name="title_activity_alarme">PDL Verificação</string>
+    <string name="title_activity_login">PDL Login</string>
     <string name="rotulo_numero_carteira_biblioteca">Número Carteira Biblioteca</string>
     <string name="rotulo_senha">Senha</string>
     <string name="botao_login">Login</string>
