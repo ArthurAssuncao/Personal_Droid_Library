@@ -10,6 +10,15 @@ package com.arthurassuncao.pdl;
 public final class R {
     public static final class attr {
     }
+    public static final class color {
+        public static final int azul=0x7f050002;
+        public static final int branco=0x7f050006;
+        public static final int selecionado=0x7f050004;
+        public static final int transparente=0x7f050003;
+        public static final int verde=0x7f050000;
+        public static final int verde_escuro=0x7f050001;
+        public static final int vermelho=0x7f050005;
+    }
     public static final class drawable {
         public static final int consulta_local=0x7f020000;
         public static final int disponivel=0x7f020001;
@@ -21,36 +30,39 @@ public final class R {
         public static final int ic_action_search=0x7f020007;
         public static final int ic_launcher=0x7f020008;
         public static final int indisponivel=0x7f020009;
-        public static final int reservado=0x7f02000a;
+        public static final int logo_pdl=0x7f02000a;
+        public static final int reservado=0x7f02000b;
     }
     public static final class id {
-        public static final int aba_busca=0x7f070000;
-        public static final int aba_busca_botao_anterior=0x7f070005;
-        public static final int aba_busca_botao_busca=0x7f070002;
-        public static final int aba_busca_botao_proxima=0x7f070004;
-        public static final int aba_busca_campo_busca=0x7f070001;
-        public static final int aba_busca_lista_resultados_livros=0x7f070003;
-        public static final int aba_extrato=0x7f070006;
-        public static final int aba_extrato_botao_atualizar_extrato=0x7f07000f;
-        public static final int aba_extrato_campo_data_emissao=0x7f07000a;
-        public static final int aba_extrato_campo_livros=0x7f07000d;
-        public static final int aba_extrato_campo_matricula=0x7f07000c;
-        public static final int aba_extrato_campo_usuario=0x7f07000b;
-        public static final int aba_extrato_lista_livros=0x7f07000e;
-        public static final int aba_extrato_rotulo_data_emissao=0x7f070009;
-        public static final int aba_extrato_rotulo_matricula=0x7f070008;
-        public static final int aba_extrato_rotulo_usuario=0x7f070007;
-        public static final int activity_pdl_tabhost=0x7f070015;
-        public static final int button1=0x7f070014;
-        public static final int item_livro_busca_imagem_status=0x7f070019;
-        public static final int item_livro_busca_texto_livro=0x7f070018;
-        public static final int item_livro_texto_data_devolucao=0x7f070017;
-        public static final int item_livro_texto_livro=0x7f070016;
-        public static final int login_campo_numero_carteirinha=0x7f070011;
-        public static final int login_campo_senha=0x7f070013;
-        public static final int login_rotulo_numero_carteirinha=0x7f070010;
-        public static final int login_rotulo_senha=0x7f070012;
-        public static final int menu_settings=0x7f07001a;
+        public static final int aba_busca=0x7f080000;
+        public static final int aba_busca_botao_anterior=0x7f080005;
+        public static final int aba_busca_botao_busca=0x7f080003;
+        public static final int aba_busca_botao_proxima=0x7f080002;
+        public static final int aba_busca_campo_busca=0x7f080001;
+        public static final int aba_busca_lista_resultados_livros=0x7f080004;
+        public static final int aba_extrato=0x7f080006;
+        public static final int aba_extrato_botao_atualizar_extrato=0x7f08000f;
+        public static final int aba_extrato_campo_data_emissao=0x7f08000a;
+        public static final int aba_extrato_campo_livros=0x7f08000d;
+        public static final int aba_extrato_campo_matricula=0x7f08000c;
+        public static final int aba_extrato_campo_usuario=0x7f08000b;
+        public static final int aba_extrato_lista_livros=0x7f08000e;
+        public static final int aba_extrato_rotulo_data_emissao=0x7f080009;
+        public static final int aba_extrato_rotulo_matricula=0x7f080008;
+        public static final int aba_extrato_rotulo_usuario=0x7f080007;
+        public static final int activity_pdl_tabhost=0x7f080017;
+        public static final int item_livro_busca_imagem_status=0x7f08001b;
+        public static final int item_livro_busca_texto_livro=0x7f08001a;
+        public static final int item_livro_texto_data_devolucao=0x7f080019;
+        public static final int item_livro_texto_livro=0x7f080018;
+        public static final int login_botao_login=0x7f080015;
+        public static final int login_botao_sair=0x7f080016;
+        public static final int login_campo_numero_carteirinha=0x7f080012;
+        public static final int login_campo_senha=0x7f080014;
+        public static final int login_imagem_logo=0x7f080010;
+        public static final int login_rotulo_numero_carteirinha=0x7f080011;
+        public static final int login_rotulo_senha=0x7f080013;
+        public static final int menu_settings=0x7f08001c;
     }
     public static final class layout {
         public static final int aba_busca=0x7f030000;
@@ -62,34 +74,52 @@ public final class R {
         public static final int item_livro_busca=0x7f030006;
     }
     public static final class menu {
-        public static final int activity_alarme=0x7f060000;
-        public static final int activity_login=0x7f060001;
-        public static final int activity_pdl=0x7f060002;
+        public static final int activity_alarme=0x7f070000;
+        public static final int activity_login=0x7f070001;
+        public static final int activity_pdl=0x7f070002;
     }
     public static final class string {
+        public static final int activity_login_msg_digite_numero_carteirinha=0x7f040001;
+        public static final int activity_login_msg_digite_senha=0x7f040002;
+        public static final int activity_login_msg_sem_conexao=0x7f040000;
+        public static final int activity_login_msg_verificando_login=0x7f040003;
+        public static final int activity_pdl_menu_cancelar=0x7f04000c;
+        public static final int activity_pdl_menu_renovar=0x7f04000b;
+        public static final int activity_pdl_msg_atualizando_extrato=0x7f040006;
+        public static final int activity_pdl_msg_buscando_livros=0x7f040004;
+        public static final int activity_pdl_msg_campo_busca_vazio=0x7f040005;
+        public static final int activity_pdl_msg_eh_primeira_pagina=0x7f040007;
+        public static final int activity_pdl_msg_nao_foi_possivel_renovar=0x7f040008;
+        public static final int activity_pdl_msg_reserva_realizada_com_sucesso=0x7f040009;
+        public static final int activity_pdl_msg_reserva_realizada_sem_sucesso=0x7f04000a;
         /**  <string name="app_name">Personal Droid Library</string> 
          */
-        public static final int app_name=0x7f040000;
-        public static final int botao_anterior=0x7f040007;
-        public static final int botao_atualizar_extrato=0x7f04000b;
-        public static final int botao_busca=0x7f040005;
-        public static final int botao_entrar=0x7f040011;
-        public static final int botao_ok=0x7f040002;
-        public static final int botao_proxima=0x7f040006;
-        public static final int descricao_imagem_status_livro=0x7f040012;
-        public static final int hello_world=0x7f040001;
-        public static final int menu_settings=0x7f040003;
-        public static final int rotulo_data_emissao=0x7f04000a;
-        public static final int rotulo_livros=0x7f04000c;
-        public static final int rotulo_matricula=0x7f040009;
-        public static final int rotulo_numero_carteira_biblioteca=0x7f04000f;
-        public static final int rotulo_senha=0x7f040010;
-        public static final int rotulo_usuario=0x7f040008;
-        public static final int title_activity_alarme=0x7f04000d;
-        public static final int title_activity_login=0x7f04000e;
-        public static final int title_activity_pdl=0x7f040004;
+        public static final int app_name=0x7f04000d;
+        public static final int botao_anterior=0x7f040015;
+        public static final int botao_atualizar_extrato=0x7f040019;
+        public static final int botao_busca=0x7f040013;
+        public static final int botao_login=0x7f04001f;
+        public static final int botao_ok=0x7f040010;
+        public static final int botao_proxima=0x7f040014;
+        public static final int botao_sair=0x7f040020;
+        public static final int descricao_imagem_logo=0x7f040024;
+        public static final int descricao_imagem_status_livro=0x7f040023;
+        public static final int hello_world=0x7f04000f;
+        public static final int menu_settings=0x7f040011;
+        public static final int reticencias=0x7f04000e;
+        public static final int rotulo_aba_busca=0x7f040021;
+        public static final int rotulo_aba_extrato_renovacao=0x7f040022;
+        public static final int rotulo_data_emissao=0x7f040018;
+        public static final int rotulo_livros=0x7f04001a;
+        public static final int rotulo_matricula=0x7f040017;
+        public static final int rotulo_numero_carteira_biblioteca=0x7f04001d;
+        public static final int rotulo_senha=0x7f04001e;
+        public static final int rotulo_usuario=0x7f040016;
+        public static final int title_activity_alarme=0x7f04001b;
+        public static final int title_activity_login=0x7f04001c;
+        public static final int title_activity_pdl=0x7f040012;
     }
     public static final class style {
-        public static final int AppTheme=0x7f050000;
+        public static final int AppTheme=0x7f060000;
     }
 }

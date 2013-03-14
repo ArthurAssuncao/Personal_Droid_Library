@@ -3,7 +3,7 @@
 import urllib, urllib2, cookielib
 
 from Pagina import *
-from Constantes import *
+from settings import *
 import re
 from util import *
 

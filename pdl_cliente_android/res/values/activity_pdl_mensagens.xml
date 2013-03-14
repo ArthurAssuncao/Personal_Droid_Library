@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="activity_pdl_msg_buscando_livros">Buscando livros&#8230;</string>
+    <string name="activity_pdl_msg_campo_busca_vazio">Digite algum termo para busca</string>
+    <string name="activity_pdl_msg_atualizando_extrato">Atualizando extrato&#8230;</string>
+    <string name="activity_pdl_msg_eh_primeira_pagina">Esta é a primeira página</string>
+    <string name="activity_pdl_msg_nao_foi_possivel_renovar">Não foi possível renovar o livro</string>
+    <string name="activity_pdl_msg_reserva_realizada_com_sucesso">Reserva realizada com sucesso</string>
+    <string name="activity_pdl_msg_reserva_realizada_sem_sucesso">Não foi possível reservar o livro</string>
+
+</resources>

@@ -1,0 +1,8 @@
+<resources>
+
+    <string name="activity_login_msg_sem_conexao">Sem conexao com a internet</string>
+    <string name="activity_login_msg_digite_numero_carteirinha">Digite o número da sua carterinha da biblioteca</string>
+    <string name="activity_login_msg_digite_senha">Digite sua senha</string>
+    <string name="activity_login_msg_verificando_login">Verificando Login&#8230;</string>
+
+</resources>

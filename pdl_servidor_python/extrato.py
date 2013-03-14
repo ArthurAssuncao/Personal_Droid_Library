@@ -4,7 +4,7 @@ import urllib, urllib2, cookielib
 
 from Pagina import *
 from LoginBibliotecaIfet import *
-from Constantes import *
+from settings import *
 import re
 import getpass
 

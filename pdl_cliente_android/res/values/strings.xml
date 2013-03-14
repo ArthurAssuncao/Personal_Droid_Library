@@ -1,7 +1,8 @@
 <resources>
 
     <!-- <string name="app_name">Personal Droid Library</string> -->
-    <string name="app_name">PDL</string>
+    <string name="app_name">Personal Droid Library</string>
+    <string name="reticencias">&#8230;</string>
     <string name="hello_world">Hello world!</string>
     <string name="botao_ok">OK</string>
     <string name="menu_settings">Settings</string>
@@ -16,9 +17,13 @@
     <string name="rotulo_livros">Livros</string>
     <string name="title_activity_alarme">PDL Verificacao</string>
     <string name="title_activity_login">PDL</string>
-    <string name="rotulo_numero_carteira_biblioteca">Numero Carteira Biblioteca</string>
+    <string name="rotulo_numero_carteira_biblioteca">Número Carteira Biblioteca</string>
     <string name="rotulo_senha">Senha</string>
-    <string name="botao_entrar">Entrar</string>
-    <string name="descricao_imagem_status_livro">Status do Livro</string> 
+    <string name="botao_login">Login</string>
+    <string name="botao_sair">Sair</string>
+    <string name="rotulo_aba_busca">Busca</string>
+    <string name="rotulo_aba_extrato_renovacao">Extrato/Renovação</string>
+    <string name="descricao_imagem_status_livro">Status do Livro</string>
+    <string name="descricao_imagem_logo">Logo do PDL (Personal Droid Library)</string>
 
 </resources>

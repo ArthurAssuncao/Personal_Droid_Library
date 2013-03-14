@@ -1,28 +1,39 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@color/branco" >
+    
+    <ImageView
+        android:id="@+id/login_imagem_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42dp"
+        android:contentDescription="@string/descricao_imagem_logo"
+        android:src="@drawable/logo_pdl" />
 
     <TextView
         android:id="@+id/login_rotulo_numero_carteirinha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="53dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/login_imagem_logo"
         android:text="@string/rotulo_numero_carteira_biblioteca"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
         android:id="@+id/login_campo_numero_carteirinha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/login_rotulo_numero_carteirinha"
         android:layout_below="@+id/login_rotulo_numero_carteirinha"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
         android:ems="10"
         android:inputType="number" >
-
         <requestFocus />
     </EditText>
 
@@ -30,9 +41,10 @@
         android:id="@+id/login_rotulo_senha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/login_campo_numero_carteirinha"
         android:layout_below="@+id/login_campo_numero_carteirinha"
-        android:layout_marginTop="53dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
         android:text="@string/rotulo_senha"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -40,19 +52,30 @@
         android:id="@+id/login_campo_senha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/login_rotulo_senha"
         android:layout_below="@+id/login_rotulo_senha"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
         android:ems="10"
         android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/login_botao_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/login_rotulo_numero_carteirinha"
         android:layout_below="@+id/login_campo_senha"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="44dp"
-        android:text="@string/botao_entrar"
-        android:onClick="entrar" />
+        android:layout_marginTop="45dp"
+        android:onClick="login"
+        android:text="@string/botao_login" />
+
+    <Button
+        android:id="@+id/login_botao_sair"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/login_botao_login"
+        android:layout_alignBottom="@+id/login_botao_login"
+        android:layout_alignRight="@+id/login_rotulo_numero_carteirinha"
+        android:onClick="sair"
+        android:text="@string/botao_sair" />
 
 </RelativeLayout>

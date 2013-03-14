@@ -1,4 +1,6 @@
-.pyc
-.py~
-.md~
-.*~
+*.pyc
+*.py~
+*.md~
+*~
+
+*.class

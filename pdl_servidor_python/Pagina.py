@@ -1,6 +1,6 @@
 
 import urllib
-from Constantes import URL_BIBLIOTECA_IFET
+from settings import URL_BIBLIOTECA_IFET
 
 class Pagina(object):
     '''

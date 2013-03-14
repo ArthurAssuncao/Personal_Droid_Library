@@ -19,12 +19,19 @@ import com.arthurassuncao.pdl.util.Conexao;
 
 public class LoginActivity extends Activity implements IActivityMostraErro{
 
+	private EditText campoNumeroCarteirinha;
+	private EditText campoSenha;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
+		
+		campoNumeroCarteirinha = (EditText)findViewById(R.id.login_campo_numero_carteirinha);
+		campoSenha = (EditText)findViewById(R.id.login_campo_senha);
+		
 		if(!Conexao.verificaConexao(this)){
-			Toast msg = Toast.makeText(this, "Sem conexao com a internet", Toast.LENGTH_SHORT);
+			Toast msg = Toast.makeText(this, getResources().getString(R.string.activity_login_msg_sem_conexao), Toast.LENGTH_SHORT);
 			msg.show();
 		}
 		Map<String, String> prefs = new Preferencia(this).getPreferencias();
@@ -43,35 +50,53 @@ public class LoginActivity extends Activity implements IActivityMostraErro{
 		return true;
 	}
 
-	public void entrar(View view){      
-		String matricula = ((EditText)findViewById(R.id.login_campo_numero_carteirinha)).getText().toString();
-		String senha = ((EditText)findViewById(R.id.login_campo_senha)).getText().toString();
+	public void login(View view){
+		EditText campoNumeroCarteirinha = (EditText)findViewById(R.id.login_campo_numero_carteirinha);
+		EditText campoSenha = (EditText)findViewById(R.id.login_campo_senha);
+		String matricula = campoNumeroCarteirinha.getText().toString();
+		String senha = campoSenha.getText().toString();
 
-		String erro = "";
-		if(matricula.trim().equals("")){
-			erro += "Digite o numero da sua carterinha da biblioteca\n";
-		}
-		if(senha.trim().equals("")){
-			erro += "Digite sua senha";
-		}
-		if(!erro.equals("")){
-			Toast msgErro = Toast.makeText(this, erro, Toast.LENGTH_SHORT);
-			msgErro.show();
-		}
-		else{
+		
+		if(verificaCampos()){
 			if(Conexao.verificaConexao(this)){
 				ProgressDialog progressDialog = new ProgressDialog(this);
-				progressDialog.setMessage("Verificando Login...");
+				progressDialog.setMessage(getResources().getString(R.string.activity_login_msg_verificando_login));
 				progressDialog.setCancelable(false);
 	
 				LoginUsuario loginUsuario = new LoginUsuario(this, progressDialog);
 				loginUsuario.execute(matricula, senha);
 			}
 			else{
-				Toast msg = Toast.makeText(this, "Sem conexao com a internet", Toast.LENGTH_SHORT);
+				Toast msg = Toast.makeText(this, getResources().getString(R.string.activity_login_msg_sem_conexao), Toast.LENGTH_SHORT);
 				msg.show();
 			}
 		}
+	}
+	
+	public void sair(View view){
+		finish();
+	}
+	
+	private boolean verificaCampos(){
+		String matricula = campoNumeroCarteirinha.getText().toString();
+		String senha = campoSenha.getText().toString();
+		
+		boolean erro = false;
+		if(matricula.trim().equals("")){
+			campoNumeroCarteirinha.setError(getResources().getString(R.string.activity_login_msg_digite_numero_carteirinha));
+			erro = true;
+		}
+		else{
+			campoNumeroCarteirinha.setError(null);
+		}
+		if(senha.trim().equals("")){
+			campoSenha.setError(getResources().getString(R.string.activity_login_msg_digite_senha));
+			erro = true;
+		}
+		else{
+			campoSenha.setError(null);
+		}
+		return !erro;
 	}
 
 	public void abrePrograma(String matricula, String senha){

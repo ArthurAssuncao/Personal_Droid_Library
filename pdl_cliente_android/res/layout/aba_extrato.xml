@@ -4,18 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp" >
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="10dp" >
 
     <TextView
         android:id="@+id/aba_extrato_rotulo_usuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
         android:text="@string/rotulo_usuario"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
         android:id="@+id/aba_extrato_rotulo_matricula"
@@ -23,9 +23,9 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/aba_extrato_rotulo_usuario"
         android:layout_below="@+id/aba_extrato_rotulo_usuario"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="15dp"
         android:text="@string/rotulo_matricula"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
         android:id="@+id/aba_extrato_rotulo_data_emissao"
@@ -33,38 +33,40 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/aba_extrato_rotulo_matricula"
         android:layout_below="@+id/aba_extrato_rotulo_matricula"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:text="@string/rotulo_data_emissao"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
+    <EditText
         android:id="@+id/aba_extrato_campo_data_emissao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/aba_extrato_rotulo_data_emissao"
         android:layout_alignBottom="@+id/aba_extrato_rotulo_data_emissao"
         android:layout_centerHorizontal="true"
-        android:text=""
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:inputType="none"
+        android:focusable="false"
+        android:ems="10" />
 
-    <TextView
+    <EditText
         android:id="@+id/aba_extrato_campo_usuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/aba_extrato_rotulo_matricula"
+        android:layout_alignBottom="@+id/aba_extrato_rotulo_usuario"
         android:layout_alignLeft="@+id/aba_extrato_campo_data_emissao"
-        android:text=""
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:focusable="false"
+        android:inputType="none" />
 
-    <TextView
+    <EditText
         android:id="@+id/aba_extrato_campo_matricula"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/aba_extrato_rotulo_matricula"
         android:layout_alignBottom="@+id/aba_extrato_rotulo_matricula"
         android:layout_alignLeft="@+id/aba_extrato_campo_usuario"
-        android:text=""
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:inputType="none"
+        android:focusable="false"
+        android:ems="10" />
 
     <TextView
         android:id="@+id/aba_extrato_campo_livros"
@@ -74,7 +76,7 @@
         android:layout_below="@+id/aba_extrato_rotulo_data_emissao"
         android:layout_marginTop="16dp"
         android:text="@string/rotulo_livros"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <ListView
         android:id="@+id/aba_extrato_lista_livros"
@@ -84,7 +86,6 @@
         android:layout_alignLeft="@+id/aba_extrato_campo_livros"
         android:layout_below="@+id/aba_extrato_campo_livros"
         android:layout_marginRight="10dp" >
-
     </ListView>
 
     <Button

@@ -9,7 +9,7 @@ import busca
 import extrato
 import verifica_login
 import renova
-import Constantes
+import settings
 import cgi
 #from cgi import parse_header, parse_multipart, parse_qs
 
@@ -124,10 +124,7 @@ class PdlHTTPRequestHandler(BaseHTTPRequestHandler):
 def main():
     print 'servidor iniciando...'
 
-    #ip and port of servr
-    #by default http server port is 80
-    #server_address = ('127.0.0.1', 8888)
-    server_address = (Constantes.URL_SERVIDOR, Constantes.PORTA_SERVIDOR)
+    server_address = (settings.URL_SERVIDOR, settings.PORTA_SERVIDOR)
     #PdlHTTPRequestHandler.protocol_version = "HTTP/1.1"
     httpd = HTTPServer(server_address, PdlHTTPRequestHandler)
     print 'servidor esta rodando...'

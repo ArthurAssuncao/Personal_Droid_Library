@@ -3,7 +3,7 @@ package com.arthurassuncao.pdl.util;
 public abstract class Constantes {
 	//.decode('ISO-8859-1').encode('UTF-8') converte string
 	//public static String URL_SERVIDOR = "http://10.3.1.20:8888";
-	public static String URL_SERVIDOR = "http://192.168.2.25:8888";
+	public static String URL_SERVIDOR = "http://192.168.10.101:8888";
 	public static final int TIMEOUT = 3000;
 	public static final int TEMPO_VERIFICAR_DATA_DEVOLUCAO = 360; //minutos
 	public static final int DIAS_VERIFICAR_LIVRO = 3;

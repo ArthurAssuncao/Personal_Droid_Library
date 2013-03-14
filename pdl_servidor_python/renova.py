@@ -4,14 +4,14 @@ from Pagina import *
 import extrato
 import json
 import urlparse
-import Constantes
+import settings
 import cookielib
 import urllib
 import urllib2
 import re
 
 def renovaLivro(url):
-    pagina = Pagina(Constantes.URL_BIBLIOTECA_IFET + url)
+    pagina = Pagina(settings.URL_BIBLIOTECA_IFET + url)
     pagina.abrirUrl()
     texto = pagina.getTexto()
     print texto
@@ -47,7 +47,7 @@ if __name__=='__main__':
     
     dadosLogin = urllib.urlencode({'IsisScript' : queryString['IsisScript'][0], 'tmp' : queryString['tmp'][0], 'login' : matricula, 'pwd' : senha})
     
-    respostaMenu = opener.open(Constantes.URL_BIBLIOTECA_IFET_POST, dadosLogin)
+    respostaMenu = opener.open(settings.URL_BIBLIOTECA_IFET_POST, dadosLogin)
     textoRespostaMenu = respostaMenu.read()
     
     print 'AKI'
@@ -56,7 +56,7 @@ if __name__=='__main__':
     
     regexUrlExtrato = re.compile(r'href="(.*?)".*Extrato')
     try:
-        urlExtrato = Constantes.URL_BIBLIOTECA_IFET + re.findall(regexUrlExtrato, textoRespostaMenu)[0]
+        urlExtrato = settings.URL_BIBLIOTECA_IFET + re.findall(regexUrlExtrato, textoRespostaMenu)[0]
     except IndexError as e:
         regexSenhaIncorreta = re.compile(r'<h2>(.*)</h2>')
         textoSenhaIncorreta = re.findall(regexSenhaIncorreta, textoRespostaMenu)[0]
@@ -76,9 +76,9 @@ if __name__=='__main__':
     
     dados = queryString
     
-    opener.open(Constantes.URL_BIBLIOTECA_IFET_POST, dados)
-    #opener.open(Constantes.URL_BIBLIOTECA_IFET + url)
-    print Constantes.URL_BIBLIOTECA_IFET + url
+    opener.open(settings.URL_BIBLIOTECA_IFET_POST, dados)
+    #opener.open(settings.URL_BIBLIOTECA_IFET + url)
+    print settings.URL_BIBLIOTECA_IFET + url
     
     return True"""
     

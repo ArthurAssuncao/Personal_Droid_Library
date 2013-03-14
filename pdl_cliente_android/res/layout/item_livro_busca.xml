@@ -10,7 +10,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:paddingTop="5dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginRight="35dp"
         android:paddingBottom="5dp"
         android:text="livro"
         android:layout_gravity="right"

@@ -19,7 +19,6 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.arthurassuncao.pdl.Preferencia.Preferencias;
@@ -61,12 +60,15 @@ public class PDLActivity extends Activity implements IActivityMostraErro{
 
 		tabHost = (TabHost)findViewById(R.id.activity_pdl_tabhost);
 		tabHost.setup();
+		
+		String busca = getResources().getString(R.string.rotulo_aba_busca);
+		String extratoRenovacao = getResources().getString(R.string.rotulo_aba_extrato_renovacao);
 
-		TabSpec spec1 = tabHost.newTabSpec("Busca");
-		TabSpec spec2 = tabHost.newTabSpec("Extrato/Renovacao");
+		TabSpec spec1 = tabHost.newTabSpec(busca);
+		TabSpec spec2 = tabHost.newTabSpec(extratoRenovacao);
 
-		spec1.setIndicator("Busca");
-		spec2.setIndicator("Extrato/Renovacao");
+		spec1.setIndicator(busca);
+		spec2.setIndicator(extratoRenovacao);
 
 		spec1.setContent(R.id.aba_busca);
 		spec2.setContent(R.id.aba_extrato);
@@ -81,7 +83,6 @@ public class PDLActivity extends Activity implements IActivityMostraErro{
 		senha = prefs.get(Preferencias.SENHA);
 
 		criarAlarme();
-
 	}
 
 	@Override
@@ -94,44 +95,42 @@ public class PDLActivity extends Activity implements IActivityMostraErro{
 	protected void onStart() {
 		super.onStart();
 	}
+	
+	private void busca(String textoBusca, int paginaAtual, int paginaProxima){
+		ProgressDialog progressDialog = new ProgressDialog(this);
+		progressDialog.setMessage(getResources().getString(R.string.activity_pdl_msg_buscando_livros));
+		progressDialog.setCancelable(false);
+
+		BuscaLivro busca = new BuscaLivro(this, progressDialog, listaLivros, paginaAtual, paginaProxima);
+		busca.execute(textoBusca);
+	}
 
 	public void busca(View view){
 		EditText campoBusca = (EditText)findViewById(R.id.aba_busca_campo_busca);
-
-		//List<Livro> livros = new ArrayList<Livro>();
 
 		try {
 			String textoBusca = campoBusca.getText().toString();
 			if(!textoBusca.trim().equals("")){
 
-				ProgressDialog progressDialog = new ProgressDialog(this);
-				progressDialog.setMessage("Buscando livros...");
-				progressDialog.setCancelable(false);
-
-				BuscaLivro busca = new BuscaLivro(this, progressDialog, listaLivros, 1, 0);
-				busca.execute(textoBusca);
-
-				//Conexao.buscaLivros(this, textoBusca, listaLivros, 1, 0);
+				busca(textoBusca, 1, 0);
 
 				paginaAtual = 1;
 				paginaProxima = 0;
 			}
 			else{
-				Toast msg = Toast.makeText(this, "Digite algum termo para busca", Toast.LENGTH_SHORT);
+				Toast msg = Toast.makeText(this, getResources().getString(R.string.activity_pdl_msg_campo_busca_vazio), Toast.LENGTH_SHORT);
 				msg.show();
 			}
 		}
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-
-		//listaLivros.setAdapter(new LivroListAdapter(this, livros));
 	}
 
 	public void setCamposExtrato(Extrato extrato){
-		TextView campoUsuario = (TextView)findViewById(R.id.aba_extrato_campo_usuario);
-		TextView campoMatricula = (TextView)findViewById(R.id.aba_extrato_campo_matricula);
-		TextView campoDataEmissao = (TextView)findViewById(R.id.aba_extrato_campo_data_emissao);
+		EditText campoUsuario = (EditText)findViewById(R.id.aba_extrato_campo_usuario);
+		EditText campoMatricula = (EditText)findViewById(R.id.aba_extrato_campo_matricula);
+		EditText campoDataEmissao = (EditText)findViewById(R.id.aba_extrato_campo_data_emissao);
 
 		campoUsuario.setText(extrato.getUsuario().getNome());
 		campoMatricula.setText(extrato.getUsuario().getMatricula());
@@ -147,9 +146,8 @@ public class PDLActivity extends Activity implements IActivityMostraErro{
 	}
 
 	public void atualizarExtrato(View componente){
-		//Conexao.buscaExtrato(this);
 		ProgressDialog progressDialog = new ProgressDialog(this);
-		progressDialog.setMessage("Atualizando extrato...");
+		progressDialog.setMessage(getResources().getString(R.string.activity_pdl_msg_atualizando_extrato));
 		progressDialog.setCancelable(false);
 		BuscaExtratoUsuario busca = new BuscaExtratoUsuario(this, progressDialog);
 		busca.execute(matricula, senha);
@@ -158,8 +156,8 @@ public class PDLActivity extends Activity implements IActivityMostraErro{
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
 		if (v.getId() == R.id.aba_extrato_lista_livros) {
-			menu.add(Menu.NONE, MENU_RENOVAR, 0, "Renovar");
-			menu.add(Menu.NONE, MENU_CANCELAR, 1, "Cancelar");
+			menu.add(Menu.NONE, MENU_RENOVAR, 0, getResources().getString(R.string.activity_pdl_menu_renovar));
+			menu.add(Menu.NONE, MENU_CANCELAR, 1, getResources().getString(R.string.activity_pdl_menu_cancelar));
 		}
 		else if (v.getId() == R.id.aba_busca_lista_resultados_livros) {
 			//menu.add(Menu.NONE, MENU_RESERVAR, 0, "Reservar");
@@ -173,17 +171,11 @@ public class PDLActivity extends Activity implements IActivityMostraErro{
 			String textoBusca = campoBusca.getText().toString();
 			if(!textoBusca.trim().equals("")){
 				paginaProxima++;
-				//Conexao.buscaLivros(this, textoBusca, listaLivros, paginaAtual, paginaProxima);
-				ProgressDialog progressDialog = new ProgressDialog(this);
-				progressDialog.setMessage("Buscando livros...");
-				progressDialog.setCancelable(false);
-
-				BuscaLivro busca = new BuscaLivro(this, progressDialog, listaLivros, paginaAtual, paginaProxima);
-				busca.execute(textoBusca);
+				busca(textoBusca, paginaAtual, paginaProxima);
 				paginaAtual++;
 			}
 			else{
-				Toast msg = Toast.makeText(this, "Digite algum termo para busca", Toast.LENGTH_SHORT);
+				Toast msg = Toast.makeText(this, getResources().getString(R.string.activity_pdl_msg_campo_busca_vazio), Toast.LENGTH_SHORT);
 				msg.show();
 			}
 		}
@@ -193,8 +185,10 @@ public class PDLActivity extends Activity implements IActivityMostraErro{
 	}
 
 	public void anterior(View view){
-		if(paginaAtual < 1 && paginaProxima < 1){
-			Toast msg = Toast.makeText(this, "Esta é a primeira página", Toast.LENGTH_SHORT);
+		Log.d("atual", String.valueOf(paginaAtual));
+		Log.d("proximo", String.valueOf(paginaProxima));
+		if(paginaAtual <= 1 && paginaProxima < 1){
+			Toast msg = Toast.makeText(this, getResources().getString(R.string.activity_pdl_msg_eh_primeira_pagina), Toast.LENGTH_SHORT);
 			msg.show();
 			return;
 		}
@@ -204,16 +198,10 @@ public class PDLActivity extends Activity implements IActivityMostraErro{
 			if(!textoBusca.trim().equals("")){
 				paginaAtual--;
 				paginaProxima--;
-				//Conexao.buscaLivros(this, textoBusca, listaLivros, paginaAtual, paginaProxima);
-				ProgressDialog progressDialog = new ProgressDialog(this);
-				progressDialog.setMessage("Buscando livros...");
-				progressDialog.setCancelable(false);
-
-				BuscaLivro busca = new BuscaLivro(this, progressDialog, listaLivros, paginaAtual, paginaProxima);
-				busca.execute(textoBusca);
+				busca(textoBusca, paginaAtual, paginaProxima);
 			}
 			else{
-				Toast msg = Toast.makeText(this, "Digite algum termo para busca", Toast.LENGTH_SHORT);
+				Toast msg = Toast.makeText(this, getResources().getString(R.string.activity_pdl_msg_campo_busca_vazio), Toast.LENGTH_SHORT);
 				msg.show();
 			}
 		}
@@ -233,18 +221,15 @@ public class PDLActivity extends Activity implements IActivityMostraErro{
 		case MENU_RENOVAR:{
 			boolean renovou = true;
 			if(renovou){
-				//Toast msg = Toast.makeText(this, "Renovação do livro realizada com sucesso", Toast.LENGTH_SHORT);
-				//msg.show();
 				Log.d(getClass().getName(), livro.getUrlRenovacao());
-				//criarNotificacao("renovacao de livro", "o livro dom casmurro deve ser renovado ate amanha", PDLActivity.class);
 				ProgressDialog progressDialog = new ProgressDialog(this);
-				progressDialog.setMessage("Buscando livros...");
+				progressDialog.setMessage(getResources().getString(R.string.activity_pdl_msg_buscando_livros));
 				progressDialog.setCancelable(false);
 				RenovaLivro renovar = new RenovaLivro(this, progressDialog, matricula, senha); 
 				renovar.execute(livro.getUrlRenovacao());
 			}
 			else{
-				Toast msg = Toast.makeText(this, "Não foi possível renovar o livro", Toast.LENGTH_SHORT);
+				Toast msg = Toast.makeText(this, getResources().getString(R.string.activity_pdl_msg_nao_foi_possivel_renovar), Toast.LENGTH_SHORT);
 				msg.show();
 			}
 			break;
@@ -252,11 +237,11 @@ public class PDLActivity extends Activity implements IActivityMostraErro{
 		case MENU_RESERVAR:{
 			boolean reservou = true;
 			if(reservou){
-				Toast msg = Toast.makeText(this, "Reserva realizada com sucesso", Toast.LENGTH_SHORT);
+				Toast msg = Toast.makeText(this, getResources().getString(R.string.activity_pdl_msg_reserva_realizada_com_sucesso), Toast.LENGTH_SHORT);
 				msg.show();
 			}
 			else{
-				Toast msg = Toast.makeText(this, "Não foi possível reservar o livro", Toast.LENGTH_SHORT);
+				Toast msg = Toast.makeText(this, getResources().getString(R.string.activity_pdl_msg_reserva_realizada_sem_sucesso), Toast.LENGTH_SHORT);
 				msg.show();
 			}
 			break;

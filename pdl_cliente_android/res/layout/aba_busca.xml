@@ -3,6 +3,9 @@
     android:id="@+id/aba_busca"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="10dp"
     android:name=".Busca" >
 
     <EditText
@@ -10,10 +13,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:ems="10"
-        android:inputType="text"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp" />
+        android:layout_toLeftOf="@+id/aba_busca_botao_proxima"
+        android:ems="10"
+        android:inputType="text" />
 
     <Button
         android:id="@+id/aba_busca_botao_busca"
@@ -22,8 +25,6 @@
         android:layout_alignBottom="@+id/aba_busca_campo_busca"
         android:layout_alignParentRight="true"
         android:layout_marginRight="10dp"
-        android:layout_alignTop="@+id/aba_busca_campo_busca"
-        android:layout_toRightOf="@+id/aba_busca_campo_busca"
         android:drawableLeft="@drawable/glyphicons_027_search"
         android:drawablePadding="3dp"
         android:onClick="busca"
@@ -37,7 +38,6 @@
         android:layout_alignLeft="@+id/aba_busca_campo_busca"
         android:layout_alignRight="@+id/aba_busca_botao_busca"
         android:layout_below="@+id/aba_busca_campo_busca" >
-
     </ListView>
 
     <Button
@@ -45,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/aba_busca_botao_busca"
+        android:layout_alignParentRight="true"
         android:layout_marginTop="10dp"
         android:drawablePadding="3dp"
         android:drawableRight="@drawable/glyphicons_222_share"
