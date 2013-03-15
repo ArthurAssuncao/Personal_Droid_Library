@@ -8,7 +8,7 @@ Sistema desenvolvido para android para permitir aos usuarios pesquisarem, renova
 Arthur Nascimento Assunção
 
 ###Como usar:
-1. Abra o arquivo Constantes.py e modifique a url do servidor para a da máquina onde será executado.
+1. Abra o arquivo settings.py e modifique a url do servidor para a da máquina onde será executado.
 2. Execute o arquivo servidor.py
 3. Modifique a url do servidor do arquivo Constantes.java(com.arthurassuncao.pdl.util) para a url especificada no arquivo Constantes.py
 4. Execute o cliente.
