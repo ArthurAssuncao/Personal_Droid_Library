@@ -1,4 +1,4 @@
-#PDL - Personal Droid Library
+PDL - Personal Droid Library
 =====
 
 Uma aplicação móvel para a plataforma **Android** capaz de interagir com o sistema de biblioteca web **PHL (Personal Home Library)** usado pelo Instituto Federal do Sudeste de Minas Gerais Câmpus Barbacena.<br>
